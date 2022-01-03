@@ -1,0 +1,241 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+- story: schedule
+  steps:
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+  - action: utter_ask_group
+  - intent: give_group
+  - action: action_schedule
+- story: rooms
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_rooms
+  - action: action_rooms
+- story: description
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_description
+  - action: action_description
+- story: free_room
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_free_room
+  - action: utter_ask_site
+  - intent: give_site
+  - action: utter_ask_time
+  - intent: give_time
+  - action: action_free_room
+- story: Story from Conversation ID 6854f926eecb4dd2a9097cb6be3ec96a
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master
+  - slot_was_set:
+    - section: master
+  - action: utter_ask_group
+- story: Story from Conversation ID 6854f926eecb4dd2a9097cb6be3ec96a
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master
+  - slot_was_set:
+    - section: master
+  - action: utter_ask_group
+- story: Story from Conversation ID 6854f926eecb4dd2a9097cb6be3ec96a
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master
+  - slot_was_set:
+    - section: master
+  - action: utter_ask_group
+- story: Story from Conversation ID 6854f926eecb4dd2a9097cb6be3ec96a
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master
+  - slot_was_set:
+    - section: master
+  - action: utter_ask_group
+- story: Story from Conversation ID 0b94a0c9aab44a0599ddf05b069ac229
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master 2
+  - slot_was_set:
+    - section: master 2
+  - action: utter_ask_group
+  - intent: give_group
+  - action: action_schedule
+- story: Story from Conversation ID 0b94a0c9aab44a0599ddf05b069ac229
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: master 2
+  - slot_was_set:
+    - section: master 2
+  - action: utter_ask_group
+  - intent: give_group
+  - action: action_schedule
+- story: Story from Conversation ID 445a858bc41e4698bc3cf73f84c3a9f7
+  steps:
+  - intent: greet
+  - action: utter_ask_request_type
+- story: Story from Conversation ID 5007f778980949048dcf5f37712e4311
+  steps:
+  - slot_was_set:
+    - request_type: son prenom
+  - action: action_teacher
+  - intent: give_data
+    entities:
+    - data: philippe
+  - slot_was_set:
+    - data: philippe
+  - action: action_teacher
+- story: Story from Conversation ID 2cbddd7cec3c418984725e41783f24fa
+  steps:
+  - slot_was_set:
+    - site: ceri
+  - action: utter_ask_time
+  - intent: give_time
+    entities:
+    - time: 13:00 à 16:00
+  - slot_was_set:
+    - time: 13:00 à 16:00
+  - action: action_free_room
+- story: Story from Conversation ID ad83f270dd9a436e8bbac992cdd0d194
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_rooms
+    entities:
+    - salle: salles
+  - slot_was_set:
+    - salle: salles
+  - action: action_rooms
+  - intent: ask_description
+    entities:
+    - salle: amphi ada
+  - slot_was_set:
+    - salle: amphi ada
+  - action: action_description
+- story: Story from Conversation ID dee88fae5c764ed6938b25f50edc73a1
+  steps:
+  - intent: ask_teacher_information
+  - action: utter_ask_request_type
+- story: Story from Conversation ID fdc457bb73874e029e1d3bedcd7eaa8e
+  steps:
+  - intent: ask_teacher_information
+  - action: utter_ask_request_type
+  - intent: give_request_type
+    entities:
+    - request_type: son prénom
+  - slot_was_set:
+    - request_type: son prénom
+  - action: action_teacher
+  - intent: deny
+  - action: utter_goodbye
+  - intent: give_data
+    entities:
+    - data: philippe
+  - slot_was_set:
+    - data: philippe
+  - action: action_teacher
+- story: Story from Conversation ID 668cb0b322ed4dc1a0dce4b3d50d8a99
+  steps:
+  - intent: ask_teacher_information
+  - action: utter_ask_request_type
+- story: Story from Conversation ID f3954530c6ec4d8d951c6b2ea2707882
+  steps:
+  - intent: ask_teacher_information
+  - action: utter_ask_request_type
+  - intent: give_request_type
+    entities:
+    - request_type: cours
+  - slot_was_set:
+    - request_type: cours
+  - action: action_teacher
+  - intent: give_data
+    entities:
+    - data: Innovation
+  - slot_was_set:
+    - data: Innovation
+  - action: action_teacher
+- story: Story from Conversation ID 3d3846198f1749c49b3f6d6759441ef6
+  steps:
+  - action: utter_ask_request_type
+  - intent: give_request_type
+    entities:
+    - request_type: cours
+  - slot_was_set:
+    - request_type: cours
+  - slot_was_set:
+    - request_type: cours
+  - action: action_teacher
+  - intent: give_data
+    entities:
+    - data: innovation
+  - slot_was_set:
+    - data: innovation
+  - action: action_teacher

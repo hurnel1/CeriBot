@@ -1,0 +1,148 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hey
+    - Bonjour
+    - salut
+    - Bonsoir
+    - héy
+    - bonjour
+- intent: goodbye
+  examples: |
+    - au revoir
+    - Au revoir
+    - À un de ces quatre
+    - à plus tard
+- intent: affirm
+  examples: |
+    - Oui
+    - En effet
+    - bien sûr
+    - ça sonne bien
+    - correct
+- intent: deny
+  examples: |
+    - non
+    - jamais
+    - Je ne pense pas
+    - n'aime pas ça
+    - en aucune façon
+    - pas vraiment
+- intent: mood_great
+  examples: |
+    - parfait
+    - très bon
+    - génial
+    - incroyable
+    - magnifique
+    - je me sens très bien
+    - Je suis génial
+    - Je vais bien
+- intent: mood_unhappy
+  examples: |
+    - triste
+    - très triste
+    - malheureux
+    - mal
+    - très mauvais
+    - terrible
+    - pas très bien
+    - extrêmement triste
+    - si triste
+- intent: bot_challenge
+  examples: |
+    - Etes-vous un robot ?
+    - Êtes-vous un être humain ?
+    - est-ce que je parle à un robot ?
+    - est-ce que je parle à un humain ?
+- intent: ask_schedule
+  examples: |
+    - Pouvez-vous me donner mon emploi du temps ?
+    - Donnez-moi l'horaire de ma section.
+    - Qu'est-ce qui va suivre ?
+    - Qu'est-ce que j'ai maintenant ?
+    - Quel est le programme ?
+    - Mon programme
+    - Mon emploi du temps
+- intent: give_section
+  examples: |
+    - ma section est Master 1
+    - je suis en [Master 1](section)
+    - [Master 1](section)
+    - ma section est Master 2
+    - Je suis en Master 2
+    - Master 2
+- intent: give_group
+  examples: |
+    - mon groupe est [alternant](group)
+    - je suis en groupe [alternant](group)
+    - groupe [alternant](group)
+    - alternant
+    - mon groupe est classique
+    - je suis en groupe classique
+    - groupe classique
+    - classique
+- intent: ask_teacher_information
+  examples: |
+    - Prof
+    - Professeur
+    - information de Professeur
+    - J'ai besoin d'information sur un prof
+    - J'ai besoin d'information sur un professeur
+- intent: give_data
+  examples: |
+    - [Fabrice](data)
+    - [J'ai besoin d'un aide pour le TP 2](data)
+    - mon message est : [J'ai fini mon TP.](data)
+    - Le cour [Innovation](data)
+    - Son nom :[Lefevre](data)
+    - Lefevre
+    - [abderrahim](data)
+    - [Philippe](data)
+- intent: give_request_type
+  examples: |
+    - [Par nom](request_type)
+    - Par [cours](request_type)
+    - [Envoyer un message](request_type)
+    - [message](request_type)
+    - [Envoie](request_type)
+    - course
+    - [course]
+    - [cours]
+    - [par prénom](request_type)
+    - [son prénom](request_type)
+    - cours
+- intent: ask_rooms
+  examples: |
+    - puis-je avoir la liste des [salles](salle) du ceri?
+    - Quelles sont les [salles](salle) du ceri?
+    - ceri [salles](salle)
+    - [salles](salle)
+    - [salle](salle)
+- intent: ask_description
+  examples: |
+    - Je voudrais aller à l '[amphi ada](salle)
+    - Où se trouve la salle [amphi ada](salle)
+    - de quel côté se trouve la salle [amphi ada](salle)
+    - de quel côté est la [salle electronique](salle)
+    - Je voudrais aller à la [salle electronique](salle)
+    - [amphi ada](salle)
+    - [salle electronique](salle)
+    - Où se trouve la [salle electronique](salle)
+    - [salle deux bis](salle)
+    - Je voudrais aller à la [salle deux bis](salle)
+    - de quel côté se trouve la salle [salle deux bis](salle)
+- intent: ask_free_room
+  examples: |
+    - Donnez moi les salles libres dans un site
+    - Quelles sont les salles libres
+- intent: give_site
+  examples: |
+    - mon site est [ceri](site)
+    - [ceri](site)
+- intent: give_time
+  examples: |
+    - [13:00 à 16:00](time)
+    - [09:00 13:00](time)
+    - [11:00](time)

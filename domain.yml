@@ -1,0 +1,134 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- ask_schedule:
+    use_entities: true
+- give_group:
+    use_entities: true
+- give_section:
+    use_entities: true
+- ask_teacher_information:
+    use_entities: true
+- give_request_type:
+    use_entities: true
+- give_data:
+    use_entities: true
+- ask_rooms:
+    use_entities: true
+- ask_description:
+    use_entities: true
+- give_time:
+    use_entities: true
+- give_site:
+    use_entities: true
+- ask_free_room:
+    use_entities: true
+entities:
+- section
+- group
+- data
+- request_type
+- salle
+- site
+- time
+slots:
+  data:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  group:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - alternant
+    - classique
+  request_type:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  salle:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  section:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - m1
+    - m2
+  site:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - ceri
+  time:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Bonjour, Comment vous portez vous?
+  - text: Bonjour, Comment allez-vous?
+  - text: Salut, J'espère que vous allez bien. Comment puis-je vous aider?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Voici quelque chose pour vous remonter le moral:'
+  utter_did_that_help:
+  - text: Cela vous a-t-il aidé ?
+  utter_happy:
+  - text: Super, continuez!
+  utter_goodbye:
+  - text: Au revoir
+  utter_iamabot:
+  - text: Je suis un bot, produit par Rasa.
+  utter_ask_section:
+  - text: Quelle est votre section?
+  - text: J'ai besoin de votre section pour cela.
+  - text: Dites-moi votre section.
+  utter_ask_group:
+  - text: Quel est votre groupe?
+  - text: Donnez-moi votre groupe, s'il vous plaît.
+  utter_ask_request_type:
+  - text: Voulez vous des informations suivant le nom ou suivant le cours?
+  utter_ask_time:
+  - text: Donnez moi la plage horaire
+  - text: J'ai besoin de la plage horaire
+  utter_ask_site:
+  - text: Sur quel site avez vous besoin de savoir les salles libres
+  - text: Veuillez préciser le site
+actions:
+- action_schedule
+- action_teacher
+- action_rooms
+- action_description
+- action_free_room
+forms: {}
+e2e_actions: []
